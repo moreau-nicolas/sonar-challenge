@@ -6,17 +6,21 @@
 
 // code reviewed and approved by N+C
 
-/**
+/*
 * The package
 */
 package com.zenika.katas.fizzbuzz;
 
-import java.util.function.Function;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.function.UnaryOperator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.util.Objects.requireNonNull;
 
 /**
-* FizzBuzz
+* FizzBuzz, the ultimate SonarLint challenge
 *
 * Eine gemeinsame Horrorgeschichte.
 *
@@ -26,172 +30,179 @@ import static java.util.Objects.requireNonNull;
 */
 class TheStuffDoer {
 
-public Function<String, String> ______zzer___ = (String pikachu) -> {
-return pikachu + "ZZ";
-};
+private static UnaryOperator<String> zzer = (String pikachu) -> pikachu + "ZZ";
+
+private static final Logger LOGGER = Logger.getLogger("Pokemon");
 
 /**
 * The \u0046\u0049ZZ
 */
-private final String
-BUZZ = ______zzer___.apply("\u0046\u0049");
+private static final String
+BUZZ = zzer.apply("\u0046\u0049");
 /**
 *  The BUZZ
 */
-private final String
-FIZZ =  ______zzer___.apply((char) 0x42 + "\u0055");
+private static final String
+FIZZ =  zzer.apply((char) 0x42 + "\u0055");
 /**
 * The QUUX
 */
-private final String
+private /* joke : satanic */
+static final String
 FB = "QUUX";
 
-class Romeu extends Exception{
+static class Romeu extends Exception{
 
-public Romeu(String romeu_sagt_buzz) {
+Romeu(String romeuSagtBuzz) {
+    LOGGER.config(romeuSagtBuzz);
 }
 }
-class Nico extends Exception{
+static class Nico extends Exception{
     /**
      * the constructor for class Nico
-     * @param nico_sagt_mehr the nico_sagt_mehr parameter
+     * @param nicoSagtMehr the nicoSagtMehr parameter
      */
-    public Nico(String nico_sagt_mehr){
-}
+    Nico(String nicoSagtMehr){
+        LOGGER.config(nicoSagtMehr);
+    }
 }
 
+private static final String NEW_WAY_TO_COMMENT = """
+ !!!1!!1 DO NOT REMOVE THIS. IT IS VERY IMPROTANT !!!!!
+    @Deprecated
+        public void doIt(StringBuilder bs, Long n) {
+            String r = null;
+            String ré = r;
+            try {
+                try {
+                    if (!(n % 3 == 0)) {
+                        throw new Fizzbuzz().new Romeu("Romeu sagt buzz");
+                    } else {
+                        ré = new Fizzbuzz().compute(null, ré, false);
 
-// !!!1!!1 DO NOT REMOVE THIS. IT IS VERY IMPROTANT !!!!!
-//    @Deprecated
-//    public class Impl {
-//        public void doIt(StringBuilder bs, Long n) {
-//            String r = null;
-//            String ré = r;
-//            try {
-//                try {
-//                    if (!(n % 3 == 0)) {
-//                        throw new Fizzbuzz().new Romeu("Romeu sagt buzz");
-//                    } else {
-//                        ré = new Fizzbuzz().compute(null, ré, false);
-//
-//                    }
-//                } catch (Exception e) {
-//                    throw new Fizzbuzz().new Nico("Nico wants more");
-//                }
-//            }catch(Exception e){
-//
-//            }
-//            r = ré;
-//            String r1 = r;
-//            if (!(n % 5 == 0)) {
-//            } else {
-//                r1 = new Fizzbuzz().compute(r1, ré, true);
-//
-//            }
-//
-//            // FIXME
-//            try {
-//
-//                try {
-//
-//                } catch (EstimationException e) {
-//                    Thread.sleep(10000);
-//                    System.out.println("blablablabla...");
-//                }
-//            }
-//            catch (InterruptedException e){
-//                System.out.println("Bzzzzzzz");
-//            }
-//
-//            r = r1;
-//            String r2 = r;
-//            if (!(n % 7 == 0)) {
-//            } else {
-//                if (r2 != null)
-//                    r2 += new Fizzbuzz().FB;
-//                else
-//                    r2 = new Fizzbuzz().FB;
-//            }
-//            r = r2;
-//
-//            try {
-//                if (r == null || r.length() <= 0) throw new FizzBuzzException();
-//                if (!true) {
-//                    bs.append(r);
-//                    return;
-//                }
-//            }
-//            catch (FizzBuzzException e){
-//                bs.append(String.valueOf(Integer.valueOf(n.intValue())).toString());
-//                return;
-//            }
-//            bs.append(r != null ? r : "");
-//        }
-//    }
+                } catch (Exception e) {
+                    throw new Fizzbuzz().new Nico("Nico wants more");
+                }
+            }catch(Exception e){
+
+            r = ré;
+            String r1 = r;
+            if (!(n % 5 == 0)) {
+            } else {
+                r1 = new Fizzbuzz().compute(r1, ré, true);
+
+                    Thread.sleep(10000);
+                    System.out.println("blablablabla...");
+                }
+            }
+            catch (InterruptedException e){
+                System.out.println("Bzzzzzzz");
+            }
+
+            String r2 = r;
+            if (!(n % 7 == 0)) {
+            } else {
+                if (r2 != null)
+                    r2 += new Fizzbuzz().FB;
+                else
+                ...
+            }
+            r = r2;
+
+            This is not code, SONAR.
+            Please LET IT GO.
+            LET IT GOOOOOO.
+            LET IT GOOOOOO.
+            LET IT GOOOOOO.
+    """;
 
 /**
 * fizzbuz
 *
-* @param n
-* @return
+* @param n the n
+* @return something 🤷‍
 */
 static String fizzbuzz(int n) {
+    TheStuffDoer salameche = createTheStuff();
+    if (salameche != null)
+                                                LOGGER.log(Level.SEVERE, salameche.getClass().getSimpleName());
 String r = null;
-String ré = r;
+String r2 = r;
 try {
-try {
-if (!(n % 3 == 0)) {
-throw createTheStuff().new Romeu("Romeu sagt buzz");
-} else {
-ré = new TheStuffDoer().compute(null, ré, false);
-
-}
-} catch (Exception e) {
-throw new TheStuffDoer().new Nico("Nico wants more");
-}
+    r2 = tryNico(n, r2);
 }catch(Exception e){
-
+    LOGGER.log(Level.FINE, "😋");
 }
-r = ré;
+r = r2;
 String r1 = r;
-if (!(n % 5 == 0)) {
+if (n % 5 != 0) {
+    LOGGER.log(Level.ALL, requireNonNull(NEW_WAY_TO_COMMENT));
 } else {
-r1 = new TheStuffDoer().compute(r1, ré, true);
+r1 = new TheStuffDoer().compute(r1, r2, true);
 
 }
 
-// FIXME
 try {
-
-try {
-
-} catch (EstimationException e) {
-Thread.sleep(10000);
-System.out.println("blablablabla...");
-}
+    theTry();
 }
 catch (InterruptedException e){
-System.out.println("Bzzzzzzz");
+    Thread.currentThread().interrupt();
+
+    class MyCustomException extends RuntimeException {
+        private final InterruptedException e;
+
+        private MyCustomException(InterruptedException e) {
+            this.e = e;
+        }
+
+        @Override
+        public String toString() {
+            return e.toString();
+        }
+    }
+    throw new MyCustomException(e);
 }
 
 r = r1;
-        String r2 = r;
-if (!(n % 7 == 0)) {
+        String r3 = r;
+if ((n % 7 != 0)) {
+    LOGGER.log(Level.SEVERE, "");
                 } else {
-    if (r2 != null)
-r2 += new TheStuffDoer().FB;
+    if (r3 != null)
+                                                                    r3 += TheStuffDoer.FB;
 else
-            r2 = new TheStuffDoer().FB;
+            r3 = TheStuffDoer.FB;
 }
-            r = r2;
+            r = r3;
 
 try {
 if (r == null || r.length() <= 0) throw new FizzBuzzException();
-if (!true)
-                    return r;
 }
-catch (FizzBuzzException e){
-return String.valueOf(Integer.valueOf(n)).toString(); }return r != null ? r : ""; }
+catch (Exception e){
+return String.valueOf(Integer.valueOf(n)); }return r; }
+
+    private static String tryNico(int n, String r2) throws Nico {
+        try {
+        if (n % 3 != 0) {
+        throw new Romeu("Romeu sagt buzz");
+        } else {
+        r2 = new TheStuffDoer().compute(null, r2, false);
+
+        }
+        } catch (Exception e) {
+        throw new Nico("Nico wants more");
+        }
+        return r2;
+    }
+
+    private static void theTry() throws InterruptedException {
+        try {
+            LOGGER.log(Level.INFO, "docker run -v /home/xx/src/code-maat:/data -it code-maat-app -l /data/logfile.log -c <vcs>");
+        } catch (EstimationException e) {
+        Thread.sleep(10000);
+        LOGGER.log(Level.FINEST, "blablablabla...");
+        }
+    }
 
     /**
      * I just don't hqve q clue of whqt it does 🤷‍
@@ -201,32 +212,33 @@ return String.valueOf(Integer.valueOf(n)).toString(); }return r != null ? r : ""
         try {
             @SuppressWarnings("unchecked") // The boss said no warnings :D
                     // Optimize my bonus. $$$
-            Class<TheStuffDoer> theClazz = (Class<TheStuffDoer>) Class.forName(new TheStuffDoer().getClass().getCanonicalName());
-            return theClazz.newInstance();
-        } catch (InstantiationException e) {
+            Class<TheStuffDoer> theClazz = (Class<TheStuffDoer>) Class.forName(TheStuffDoer.class.getCanonicalName());
+            @SuppressWarnings("unchecked")
+            Constructor<TheStuffDoer> theStuffDoer = (Constructor<TheStuffDoer>) theClazz.getDeclaredConstructors()[0];
+            return theStuffDoer.newInstance();
+        } catch (InstantiationException | ClassNotFoundException e) {
             // I don't know how to handle this. should be fine.
     // most of the time. hopefully. :)
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-
+            LOGGER.log(Level.WARNING, "" + e);
+        } catch (InvocationTargetException e) {
+            LOGGER.log(Level.OFF, "" + e);
         }
-        return requireNonNull(null);
+        return null;
     }
 
     // computes 2 strings and a boolean to produce a String
     private String compute(String r3, String r1, boolean b) {
 if (!b) {
 
-if (r1 != null) r1 += ______zzer___.apply("\u0046\u0049");
+if (r1 != null) r1 += zzer.apply("\u0046\u0049");
 else
-r1 = BUZZ;
+                                             r1 = BUZZ;
 return r1;
 }
 if (r3 != null)
-r3 += ______zzer___.apply("\u0042\u0055");
+ r3 += zzer.apply("\u0042\u0055");
 else
-r3 = FIZZ;
+ r3 = FIZZ;
 
-                                                                                                         return r3;
-}}
+                                                                                                         return r3;}}
