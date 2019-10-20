@@ -126,10 +126,10 @@ static String fizzbuzz(int n) {
     TheStuffDoer salameche = createTheStuff();
     if (salameche != null)
                                                 LOGGER.log(Level.SEVERE, salameche.getClass().getSimpleName());
-String r = null;
-String r2 = r;
+String r;
+String r2 = null;
 try {
-    r2 = tryNico(n, r2);
+    r2 = tryNico(n);
 }catch(Exception e){
     LOGGER.log(Level.FINE, "😋");
 }
@@ -181,12 +181,13 @@ if (r == null || r.length() <= 0) throw new FizzBuzzException();
 catch (Exception e){
 return String.valueOf(Integer.valueOf(n)); }return r; }
 
-    private static String tryNico(int n, String r2) throws Nico {
+    private static String tryNico(int n) throws Nico {
+        String r2;
         try {
         if (n % 3 != 0) {
         throw new Romeu("Romeu sagt buzz");
         } else {
-        r2 = new TheStuffDoer().compute(null, r2, false);
+        r2 = new TheStuffDoer().compute(null, null, false);
 
         }
         } catch (Exception e) {
