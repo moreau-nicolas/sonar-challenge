@@ -83,7 +83,8 @@ private static final String NEW_WAY_TO_COMMENT = """
                 } catch (Exception e) {
                     throw new Fizzbuzz().new Nico("Nico wants more");
                 }
-            }catch(Exception e){
+            }
+            catch(Exception e){
 
             r = ré;
             String r1 = r;
@@ -95,9 +96,11 @@ private static final String NEW_WAY_TO_COMMENT = """
                     System.out.println("blablablabla...");
                 }
             }
+
             catch (InterruptedException e){
                 System.out.println("Bzzzzzzz");
             }
+
 
             String r2 = r;
             if (!(n % 7 == 0)) {
@@ -106,12 +109,14 @@ private static final String NEW_WAY_TO_COMMENT = """
                     r2 += new Fizzbuzz().FB;
                 else
                 ...
+
             }
             r = r2;
 
             This is not code, SONAR.
             Please LET IT GO.
             LET IT GOOOOOO.
+
             LET IT GOOOOOO.
             LET IT GOOOOOO.
     """;
@@ -122,7 +127,12 @@ private static final String NEW_WAY_TO_COMMENT = """
 * @param n the n
 * @return something 🤷‍
 */
-static String fizzbuzz(int n) {
+static
+String
+fizzbuzz(
+        int n
+)
+{
     TheStuffDoer salameche = createTheStuff();
     if (salameche != null)
                                                 LOGGER.log(Level.SEVERE, salameche.getClass().getSimpleName());
@@ -135,37 +145,35 @@ try {
 }
 r = r2;
 String r1 = r;
-if (n % 5 != 0) {
+if (modFeunf(n) != 0) {
     LOGGER.log(Level.ALL, requireNonNull(NEW_WAY_TO_COMMENT));
 } else {
 r1 = new TheStuffDoer().compute(r1, r2, true);
 
 }
 
-try {
-    theTry();
-}
-catch (InterruptedException e){
-    Thread.currentThread().interrupt();
+class MyCustomException extends RuntimeException {
+    private final Throwable e;
 
-    class MyCustomException extends RuntimeException {
-        private final InterruptedException e;
-
-        private MyCustomException(InterruptedException e) {
-            this.e = e;
-        }
-
-        @Override
-        public String toString() {
-            return e.toString();
-        }
+    private MyCustomException(Throwable e) {
+        this.e = e;
     }
-    throw new MyCustomException(e);
+
+    public String toString() {
+        return e.toString();
+    }
 }
+    try {
+        Constructor<?> theStuff = MyCustomException.class.getDeclaredConstructors()[0];
+        LOGGER.finest(theStuff.newInstance(new EstimationException()).toString()); } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {/* ¯\_(ツ)_/¯ */}
+
+    try {
+    theTry();
+} catch (Exception e) { throw new MyCustomException(e); }
 
 r = r1;
         String r3 = r;
-if ((n % 7 != 0)) {
+if ((modSieben(n) != 0)) {
     LOGGER.log(Level.SEVERE, "");
                 } else {
     if (r3 != null)
@@ -181,10 +189,18 @@ if (r == null || r.length() <= 0) throw new FizzBuzzException();
 catch (Exception e){
 return String.valueOf(Integer.valueOf(n)); }return r; }
 
+    private static int modSieben(int n) {
+        return n % 7;
+    }
+
+    private static int modFeunf(int n) {
+        return n % 5;
+    }
+
     private static String tryNico(int n) throws Nico {
         String r2;
         try {
-        if (n % 3 != 0) {
+        if (modDrey(n) != 0) {
         throw new Romeu("Romeu sagt buzz");
         } else {
         r2 = new TheStuffDoer().compute(null, null, false);
@@ -196,13 +212,14 @@ return String.valueOf(Integer.valueOf(n)); }return r; }
         return r2;
     }
 
+    private static int modDrey(int n) {
+        return n % 3;
+    }
+
     private static void theTry() throws InterruptedException {
         try {
             LOGGER.log(Level.INFO, "docker run -v /home/xx/src/code-maat:/data -it code-maat-app -l /data/logfile.log -c <vcs>");
-        } catch (EstimationException e) {
-        Thread.sleep(10000);
-        LOGGER.log(Level.FINEST, "blablablabla...");
-        }
+        } catch (EstimationException e) {Thread.sleep(10000); LOGGER.log(Level.FINEST, "blablablabla...", e);}
     }
 
     /**
@@ -216,16 +233,7 @@ return String.valueOf(Integer.valueOf(n)); }return r; }
             Class<TheStuffDoer> theClazz = (Class<TheStuffDoer>) Class.forName(TheStuffDoer.class.getCanonicalName());
             @SuppressWarnings("unchecked")
             Constructor<TheStuffDoer> theStuffDoer = (Constructor<TheStuffDoer>) theClazz.getDeclaredConstructors()[0];
-            return theStuffDoer.newInstance();
-        } catch (InstantiationException | ClassNotFoundException e) {
-            // I don't know how to handle this. should be fine.
-    // most of the time. hopefully. :)
-        } catch (IllegalAccessException e) {
-            LOGGER.log(Level.WARNING, "" + e);
-        } catch (InvocationTargetException e) {
-            LOGGER.log(Level.OFF, "" + e);
-        }
-        return null;
+            return theStuffDoer.newInstance(); } catch (InstantiationException | ClassNotFoundException e) {/* I don't know how to handle this. should be fine. most of the time. hopefully. :) */ } catch (IllegalAccessException e) {LOGGER.log(Level.WARNING, "" + e); } catch (InvocationTargetException e) { LOGGER.log(Level.OFF, "" + e); } return null;
     }
 
     // computes 2 strings and a boolean to produce a String
